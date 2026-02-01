@@ -241,8 +241,16 @@ export default function Home() {
         </AnimatePresence>
       </main>
 
-      <footer style={{ marginTop: "var(--space-xl)", textAlign: "center", opacity: 0.1, fontSize: "10px", letterSpacing: "3px" }}>
-        OAS / FLUENCY OVER UNDERSTANDING
+      <footer style={{ marginTop: "var(--space-xl)", textAlign: "center" }}>
+        <div style={{ marginBottom: "var(--space-md)", maxWidth: "600px", margin: "0 auto var(--space-xl)", opacity: 0.4 }}>
+          <h4 style={{ fontSize: "10px", letterSpacing: "2px", textTransform: "uppercase", marginBottom: "var(--space-sm)" }}>Philosophy</h4>
+          <p style={{ fontSize: "12px", fontStyle: "italic", lineHeight: "1.6" }}>
+            "Body before mind, fluency before understanding. The key to operational intelligence is physical automaticity. Stop think-typing; start flow-typing."
+          </p>
+        </div>
+        <div style={{ opacity: 0.1, fontSize: "10px", letterSpacing: "3px" }}>
+          OAS / THE SEARCH SPACE / 2026
+        </div>
       </footer>
     </div>
   );
