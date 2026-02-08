@@ -180,14 +180,14 @@ function PracticeContent() {
 
                     <div style={{ flex: 1, position: "relative", overflow: "auto", display: "flex" }}>
                         {/* Line Numbers */}
-                        <div className="line-numbers" style={{ background: "rgba(0,0,0,0.2)", minHeight: "100%" }}>
+                        <div className="line-numbers" style={{ background: "rgba(0,0,0,0.2)", minHeight: "100%", padding: "var(--space-md) var(--space-sm)", fontFamily: "var(--font-mono)", fontSize: "14px", lineHeight: "1.6", textAlign: "right", userSelect: "none", opacity: 0.5 }}>
                             {code.split("\n").map((_, i) => (
                                 <div key={i}>{i + 1}</div>
                             ))}
                         </div>
 
                         {/* Code Area */}
-                        <div className="code-practice-container" style={{ flex: 1, padding: "var(--space-md)", fontFamily: "var(--font-mono)", fontSize: "14px", lineHeight: "1.6", whiteSpace: "pre" }}>
+                        <div className="code-practice-container" style={{ flex: 1, position: "relative", padding: "var(--space-md)", fontFamily: "var(--font-mono)", fontSize: "14px", lineHeight: "1.6", whiteSpace: "pre" }}>
                             {/* 
                        We want syntax highlighting AND typing status. 
                        The easiest way is to render the code TWICE perfectly overlapping:
