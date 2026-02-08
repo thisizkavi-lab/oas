@@ -187,7 +187,7 @@ function PracticeContent() {
                         </div>
 
                         {/* Code Area */}
-                        <div className="code-practice-container" style={{ flex: 1, position: "relative", padding: "var(--space-md)", fontFamily: "var(--font-mono)", fontSize: "14px", lineHeight: "1.6", whiteSpace: "pre" }}>
+                        <div className="code-practice-container" style={{ flex: 1, position: "relative", padding: "var(--space-md) var(--space-md) var(--space-md) 60px", fontFamily: "var(--font-mono)", fontSize: "14px", lineHeight: "1.6", whiteSpace: "pre" }}>
                             {/* 
                        We want syntax highlighting AND typing status. 
                        The easiest way is to render the code TWICE perfectly overlapping:
@@ -195,7 +195,7 @@ function PracticeContent() {
                        2. Top layer: Typed characters (bright), Current cursor, Pending (transparent)
                    */}
 
-                            <div style={{ position: "absolute", top: "var(--space-md)", left: "var(--space-md)", pointerEvents: "none", userSelect: "none" }}>
+                            <div style={{ position: "absolute", top: "var(--space-md)", left: "60px", pointerEvents: "none", userSelect: "none" }}>
                                 {/* Background Layer: Syntax Highlighting */}
                                 <span style={{ opacity: 0.5 }}>{renderCodeWithHighlighting(code)}</span>
                             </div>
