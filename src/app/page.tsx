@@ -119,6 +119,7 @@ export default function Home() {
       <nav className="minimal-nav" style={{ border: "none", marginBottom: "var(--space-md)" }}>
         <div className="minimal-logo">OAS / MINIMAL</div>
         <div style={{ display: "flex", gap: "var(--space-md)", alignItems: "center" }}>
+          <Link href="/path" style={{ fontSize: "10px", color: "var(--forest)", textDecoration: "none", opacity: 0.7, textTransform: "uppercase", letterSpacing: "1px" }}>Path</Link>
           <Link href="/drills" style={{ fontSize: "10px", color: "var(--khaki)", textDecoration: "none", opacity: 0.7, textTransform: "uppercase", letterSpacing: "1px" }}>Drills</Link>
           <button
             className="btn-minimal"
