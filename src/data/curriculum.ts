@@ -229,6 +229,152 @@ print(f"Age != Score: {different_check}")
 print(f"Status: {status}")
 print(f"Level: {level}")
 print(f"Tag: {tag}")`
+            },
+            {
+                id: "py-05",
+                title: "05. Loops & Iteration",
+                status: "open",
+                description: "While loops, for loops, nested loops, and control flow.",
+                content: `"""
+Typing practice program.
+Uses while and for loops, range, nested loops, break, continue, and loop else.
+Shows iteration and control flow.
+"""
+
+# while loop
+count_text = input("Enter a limit: ")
+limit = int(count_text)
+
+i = 0
+while i < limit:
+    print(f"While count: {i}")
+    i += 1
+
+# for loop with range
+for n in range(0, limit, 1):
+    print(f"For count: {n}")
+
+# nested loops
+rows = 3
+cols = 4
+
+for r in range(rows):
+    for c in range(cols):
+        print(f"({r},{c})", end=" ")
+    print()
+
+# break and continue
+for x in range(10):
+    if x == 2:
+        continue
+    if x == 7:
+        break
+    print(f"Value: {x}")
+
+# loop else
+for y in range(5):
+    print(f"Loop y: {y}")
+else:
+    print("Loop finished without break")`
+            },
+            {
+                id: "py-06",
+                title: "06. Functions",
+                status: "open",
+                description: "Definitions, parameters, returns, scope, and default args.",
+                content: `"""
+Typing practice program.
+Uses function definitions, parameters, arguments, scope, returns,
+keyword arguments, and default values.
+Shows control flow between functions and main code.
+"""
+
+# global variable
+base_value = 10
+
+# function with parameters and return
+def add_numbers(a, b):
+    result = a + b
+    return result
+
+# function with default parameter
+def multiply_number(x, factor=2):
+    product = x * factor
+    return product
+
+# function showing local scope
+def compute_total(value):
+    local_total = value + base_value
+    return local_total
+
+# function with keyword arguments
+def format_result(number, label="Result"):
+    text = f"{label}: {number}"
+    return text
+
+# main program
+first_text = input("Enter first number: ")
+second_text = input("Enter second number: ")
+
+first = int(first_text)
+second = int(second_text)
+
+sum_result = add_numbers(first, second)
+mul_result = multiply_number(sum_result)
+custom_mul = multiply_number(sum_result, factor=3)
+
+total = compute_total(sum_result)
+
+formatted_one = format_result(sum_result)
+formatted_two = format_result(total, label="Total")
+
+print(formatted_one)
+print("After multiply:", mul_result)
+print("After custom multiply:", custom_mul)
+print(formatted_two)`
+            },
+            {
+                id: "py-07",
+                title: "07. Modules & Guards",
+                status: "open",
+                description: "Imports, standard library, help(), and main execution guard.",
+                content: `"""
+Typing practice program.
+Uses import, from-import, help, and __name__ == "__main__".
+Shows how modules and main guards work.
+"""
+
+import math
+from datetime import date
+
+# function using imported module
+def circle_area(radius):
+    area = math.pi * radius ** 2
+    return area
+
+# function using date
+def make_date(year, month, day):
+    d = date(year, month, day)
+    return d
+
+# main program
+def main():
+    radius_text = input("Enter radius: ")
+    radius = float(radius_text)
+
+    area = circle_area(radius)
+    today = make_date(2023, 2, 14)
+
+    print(f"Radius: {radius}")
+    print(f"Area: {area}")
+    print(f"Date: {today}")
+
+    help(math)
+    help(circle_area)
+
+# main guard
+if __name__ == "__main__":
+    main()`
             }
         ]
     },
