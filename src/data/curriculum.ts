@@ -375,6 +375,143 @@ def main():
 # main guard
 if __name__ == "__main__":
     main()`
+            },
+            {
+                id: "py-08",
+                title: "08. String Methods",
+                status: "open",
+                description: "Slicing, methods (upper/lower/split/join), and formatting.",
+                content: `"""
+Typing practice program.
+Uses string indexing, slicing, comparison, methods, and loops.
+Shows upper, lower, count, find, index, split, join, format, and in.
+"""
+
+# get input
+text = input("Enter a sentence: ")
+
+# basic info
+length = len(text)
+upper_text = text.upper()
+lower_text = text.lower()
+
+# slicing
+first_part = text[:5]
+last_part = text[-5:]
+
+# comparison
+starts_with_a = text > "a"
+
+# searching
+count_a = text.count("a")
+find_a = text.find("a")
+
+if "a" in text:
+    index_a = text.index("a")
+else:
+    index_a = -1
+
+# split and join
+words = text.split(" ")
+joined = "-".join(words)
+
+# format
+formatted = "Length: {}, Upper: {}".format(length, upper_text)
+
+# loop through string
+letters = []
+for ch in text:
+    letters.append(ch.upper())
+
+result_letters = "".join(letters)
+
+# output
+print("Text:", text)
+print("Length:", length)
+
+print("Upper:", upper_text)
+print("Lower:", lower_text)
+
+print("First part:", first_part)
+print("Last part:", last_part)
+
+print("Text > 'a':", starts_with_a)
+
+print("Count of 'a':", count_a)
+print("Find 'a':", find_a)
+print("Index 'a':", index_a)
+
+print("Words:", words)
+print("Joined:", joined)
+
+print("Formatted:", formatted)
+print("Letters:", result_letters)`
+            },
+            {
+                id: "py-09",
+                title: "09. Lists & Mutations",
+                status: "open",
+                description: "Creation, mutation, sorting, nested lists, and comprehensions.",
+                content: `"""
+Typing practice program.
+Uses list creation, mutation, iteration, sorting, copying,
+nested lists, and list comprehensions.
+"""
+
+# create list
+numbers_text = input("Enter numbers separated by space: ")
+parts = numbers_text.split(" ")
+
+numbers = []
+for p in parts:
+    numbers.append(int(p))
+
+# modify list
+numbers.append(100)
+
+if len(numbers) > 0:
+    numbers.pop()
+
+if len(numbers) > 1:
+    numbers.remove(numbers[0])
+
+# copy list
+numbers_copy = numbers.copy()
+
+# sort and reverse
+numbers.sort()
+numbers.reverse()
+
+# list info
+maximum = max(numbers)
+minimum = min(numbers)
+total = sum(numbers)
+
+# nested list
+matrix = [
+    numbers,
+    numbers_copy
+]
+
+# list comprehension
+evens = [n for n in numbers if n % 2 == 0]
+
+# iteration by index
+indexed_values = []
+for i in range(len(numbers)):
+    indexed_values.append(numbers[i] * 2)
+
+# output
+print("Numbers:", numbers)
+print("Copy:", numbers_copy)
+
+print("Max:", maximum)
+print("Min:", minimum)
+print("Sum:", total)
+
+print("Matrix:", matrix)
+print("Evens:", evens)
+print("Indexed values:", indexed_values)`
             }
         ]
     },
