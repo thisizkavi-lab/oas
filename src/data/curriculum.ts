@@ -512,6 +512,476 @@ print("Sum:", total)
 print("Matrix:", matrix)
 print("Evens:", evens)
 print("Indexed values:", indexed_values)`
+            },
+            {
+                id: "py-10",
+                title: "10. Dictionaries",
+                status: "open",
+                description: "Key-value pairs, nested dicts, and comprehensions.",
+                content: `"""
+Typing practice program.
+Uses dictionary creation, access, update, delete, iteration,
+nested dictionaries, and dictionary comprehensions.
+"""
+
+# create dictionary
+name = input("Enter a name: ")
+age_text = input("Enter age: ")
+
+age = int(age_text)
+
+person = {
+    "name": name,
+    "age": age,
+    "city": "Unknown"
+}
+
+# access values
+person_name = person["name"]
+person_age = person.get("age")
+
+# update and add
+person["age"] = person_age + 1
+person["country"] = "Earth"
+
+person.update({"city": "Somewhere"})
+
+# delete
+removed_city = person.pop("city")
+
+# conditional checks
+has_name = "name" in person
+has_city = "city" in person
+
+# iteration
+keys_list = []
+values_list = []
+items_list = []
+
+for key in person:
+    keys_list.append(key)
+
+for value in person.values():
+    values_list.append(value)
+
+for item in person.items():
+    items_list.append(item)
+
+# nested dictionary
+people = {
+    "person1": person,
+    "person2": {
+        "name": "Alex",
+        "age": 30,
+        "country": "Earth"
+    }
+}
+
+# dictionary comprehension
+age_map = {k: v["age"] for k, v in people.items()}
+
+# output
+print("Person:", person)
+print("Removed city:", removed_city)
+
+print("Has name:", has_name)
+print("Has city:", has_city)
+
+print("Keys:", keys_list)
+print("Values:", values_list)
+print("Items:", items_list)
+
+print("People:", people)
+print("Age map:", age_map)`
+            },
+            {
+                id: "py-11",
+                title: "11. Classes & Objects",
+                status: "open",
+                description: "Class definitions, methods, magic methods, and operator overloading.",
+                content: `"""
+Typing practice program.
+Uses class definition, instance and class attributes, methods,
+magic methods, operator overloading, and object creation.
+"""
+
+# class definition
+class Box:
+    """Represents a box with width and height."""
+
+    category = "Shape"
+
+    def __init__(self, width, height):
+        self.width = width
+        self.height = height
+
+    def area(self):
+        result = self.width * self.height
+        return result
+
+    def scale(self, factor):
+        self.width = self.width * factor
+        self.height = self.height * factor
+
+    def __mul__(self, other):
+        new_width = self.width * other.width
+        new_height = self.height * other.height
+        return Box(new_width, new_height)
+
+    def __str__(self):
+        return f"Box({self.width}, {self.height})"
+
+
+# create instances
+box1_text = input("Enter width and height for box1: ")
+box2_text = input("Enter width and height for box2: ")
+
+p1 = box1_text.split(" ")
+p2 = box2_text.split(" ")
+
+box1 = Box(int(p1[0]), int(p1[1]))
+box2 = Box(int(p2[0]), int(p2[1]))
+
+# use methods
+area1 = box1.area()
+area2 = box2.area()
+
+box1.scale(2)
+
+# operator overloading
+box3 = box1 * box2
+area3 = box3.area()
+
+# output
+print("Category:", Box.category)
+
+print("Box1:", box1)
+print("Box2:", box2)
+print("Box3:", box3)
+
+print("Area1:", area1)
+print("Area2:", area2)
+print("Area3:", area3)`
+            },
+            {
+                id: "py-12",
+                title: "12. Recursion",
+                status: "open",
+                description: "Recursive functions for math, strings, and list searching.",
+                content: `"""
+Typing practice program.
+Uses recursion with base and recursive cases.
+Shows factorial, fibonacci, string reverse, list search,
+and simple recursive processing.
+"""
+
+# factorial recursion
+def factorial(n):
+    if n <= 1:
+        return 1
+    return n * factorial(n - 1)
+
+# fibonacci recursion
+def fibonacci(n):
+    if n <= 1:
+        return n
+    return fibonacci(n - 1) + fibonacci(n - 2)
+
+# string recursion
+def reverse_string(text):
+    if text == "":
+        return ""
+    return reverse_string(text[1:]) + text[0]
+
+# list recursion search
+def search_list(items, target, index=0):
+    if index >= len(items):
+        return -1
+    if items[index] == target:
+        return index
+    return search_list(items, target, index + 1)
+
+# recursive count
+def recursive_count(items, value, index=0):
+    if index >= len(items):
+        return 0
+    found = 1 if items[index] == value else 0
+    return found + recursive_count(items, value, index + 1)
+
+
+# main program
+num_text = input("Enter a number: ")
+num = int(num_text)
+
+text = input("Enter a word: ")
+
+list_text = input("Enter numbers separated by space: ")
+parts = list_text.split(" ")
+
+numbers = []
+for p in parts:
+    numbers.append(int(p))
+
+fact_result = factorial(num)
+fib_result = fibonacci(num)
+rev_result = reverse_string(text)
+
+target = numbers[0]
+search_result = search_list(numbers, target)
+count_result = recursive_count(numbers, target)
+
+# output
+print("Factorial:", fact_result)
+print("Fibonacci:", fib_result)
+print("Reversed:", rev_result)
+
+print("Numbers:", numbers)
+print("Search index:", search_result)
+print("Count:", count_result)`
+            },
+            {
+                id: "py-13",
+                title: "13. Inheritance & Polymorphism",
+                status: "open",
+                description: "Inheritance, super(), mixins, and polymorphism.",
+                content: `"""
+Typing practice program.
+Uses inheritance, method overriding, super(),
+hierarchical inheritance, multiple inheritance, and polymorphism.
+"""
+
+# superclass
+class Animal:
+    def __init__(self, name):
+        self.name = name
+
+    def speak(self):
+        return "Animal sound"
+
+
+# hierarchical inheritance
+class Dog(Animal):
+    def __init__(self, name, breed):
+        super().__init__(name)
+        self.breed = breed
+
+    def speak(self):
+        return f"{self.name} says Woof"
+
+
+class Cat(Animal):
+    def __init__(self, name, color):
+        super().__init__(name)
+        self.color = color
+
+    def speak(self):
+        return f"{self.name} says Meow"
+
+
+# mixin class
+class FlyMixin:
+    def fly(self):
+        return f"{self.name} is flying"
+
+
+# multiple inheritance
+class Bird(Animal, FlyMixin):
+    def __init__(self, name, wingspan):
+        super().__init__(name)
+        self.wingspan = wingspan
+
+    def speak(self):
+        return f"{self.name} says Chirp"
+
+
+# main program
+dog_name = input("Enter dog name: ")
+cat_name = input("Enter cat name: ")
+bird_name = input("Enter bird name: ")
+
+dog = Dog(dog_name, "Bulldog")
+cat = Cat(cat_name, "Black")
+bird = Bird(bird_name, 20)
+
+animals = [dog, cat, bird]
+
+# polymorphism
+sounds = []
+for a in animals:
+    sounds.append(a.speak())
+
+# output
+print("Dog:", dog.speak())
+print("Cat:", cat.speak())
+print("Bird:", bird.speak())
+
+print("Bird fly:", bird.fly())
+
+print("All sounds:", sounds)`
+            },
+            {
+                id: "py-14",
+                title: "14. File I/O & Exceptions",
+                status: "open",
+                description: "Reading/writing files, try/except blocks, and raising errors.",
+                content: `"""
+Typing practice program.
+Uses file reading and writing, newline handling,
+try/except blocks, and raising exceptions.
+"""
+
+# get input
+filename = input("Enter file name: ")
+number_text = input("Enter a number: ")
+
+# exception handling
+try:
+    number = int(number_text)
+except ValueError as err:
+    print("Invalid number")
+    raise ValueError("Input must be an integer")
+
+# write to file
+file = open(filename, "w")
+
+file.write("Number: " + str(number) + "\\n")
+file.write("Square: " + str(number * number) + "\\n")
+file.write("Cube: " + str(number ** 3) + "\\n")
+
+file.close()
+
+# append to file
+file = open(filename, "a")
+file.write("Status: Saved successfully\\n")
+file.close()
+
+# read entire file
+file = open(filename, "r")
+data = file.read()
+file.close()
+
+# read line by line
+file = open(filename, "r")
+line1 = file.readline()
+lines = file.readlines()
+file.close()
+
+# output
+print("\\nFull file content:")
+print(data)
+
+print("First line:")
+print(line1.strip())
+
+print("Remaining lines:")
+for line in lines:
+    print(line.strip())`
+            },
+            {
+                id: "py-15",
+                title: "15. Data Science Basics",
+                status: "open",
+                description: "NumPy arrays, Pandas DataFrames, and Matplotlib sizing.",
+                content: `"""
+Typing practice program.
+Uses NumPy arrays, Pandas DataFrames, indexing, slicing, filtering,
+missing values, and basic Matplotlib plots.
+"""
+
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+
+
+# numpy arrays
+arr = np.array([10, 20, 30, 40, 50])
+zeros = np.zeros((2, 3))
+ones = np.ones((2, 3))
+randoms = np.random.rand(3, 3)
+
+
+# pandas dataframe
+data = {
+    "name": ["A", "B", "C", "D", "E"],
+    "age": [20, 25, None, 30, 22],
+    "score": [88, 92, 79, None, 85]
+}
+
+df = pd.DataFrame(data)
+
+
+# explore data
+head_data = df.head()
+tail_data = df.tail()
+info_data = df.info()
+desc_data = df.describe()
+
+
+# indexing and slicing
+first_row = df.loc[0]
+score_column = df["score"]
+slice_rows = df.loc[1:3, ["name", "age"]]
+iloc_rows = df.iloc[0:3, 0:2]
+
+
+# filtering
+filtered = df[df["age"] > 22]
+
+
+# missing values
+null_map = df.isnull()
+filled = df.fillna(0)
+dropped = df.dropna()
+
+
+# value counts and unique
+unique_names = df["name"].unique()
+age_counts = df["age"].value_counts(dropna=False)
+
+
+# plotting data
+x = np.array([1, 2, 3, 4, 5])
+y = np.array([2, 4, 6, 8, 10])
+
+plt.bar(x, y)
+plt.show()
+
+plt.plot(x, y)
+plt.show()
+
+plt.scatter(x, y)
+plt.show()
+
+plt.hist(arr)
+plt.show()
+
+plt.boxplot(arr)
+plt.show()
+
+
+# output
+print("Array:", arr)
+print("Zeros:\\n", zeros)
+print("Ones:\\n", ones)
+print("Randoms:\\n", randoms)
+
+print("\\nDataFrame:\\n", df)
+print("\\nHead:\\n", head_data)
+print("\\nTail:\\n", tail_data)
+
+print("\\nFirst row:\\n", first_row)
+print("\\nScore column:\\n", score_column)
+print("\\nSlice rows:\\n", slice_rows)
+print("\\nILOC rows:\\n", iloc_rows)
+
+print("\\nFiltered:\\n", filtered)
+
+print("\\nNull map:\\n", null_map)
+print("\\nFilled:\\n", filled)
+print("\\nDropped:\\n", dropped)
+
+print("\\nUnique names:", unique_names)
+print("\\nAge counts:\\n", age_counts)`
             }
         ]
     },
